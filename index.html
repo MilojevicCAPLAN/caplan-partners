@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caplan & Partners | Conseil & Optimisation Énergétique</title>
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin: 0; color: #222; background: #f0f4f8; }
+    header { background: #1a4f9c; color: white; padding: 60px 20px; text-align: center; background-image: url('https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center; }
+    header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    header p { font-size: 1.2em; color: #e0e0e0; }
+    section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+    h2 { color: #1a4f9c; font-size: 1.8em; margin-bottom: 20px; }
+    p { line-height: 1.6; }
+    .cta { display: inline-block; background: #1a4f9c; color: white; padding: 12px 28px; border-radius: 6px; text-decoration: none; margin-top: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .news, .solution { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: relative; overflow: hidden; }
+    .solution img, .news img { width: 100%; height: 150px; object-fit: cover; border-radius: 6px; margin-bottom: 10px; }
+    form { display: flex; flex-direction: column; gap: 12px; max-width: 500px; margin: 0 auto; }
+    input, select, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; }
+    button { background: #1a4f9c; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #163d7a; }
+    footer { background: #1a4f9c; color: #eee; text-align: center; padding: 40px 20px; margin-top: 80px; font-size: 0.9em; }
+    .success-message { color: green; text-align: center; margin-top: 10px; font-weight: bold; }
+  </style>
+  <script>
+    const formEmail = 'g.caplan@elly-energie.fr';
+    function sendForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://formsubmit.co/ajax/' + formEmail);
+      xhr.setRequestHeader('Accept', 'application/json');
+      xhr.onload = () => {
+        if(xhr.status === 200){
+          document.getElementById('formMessage').textContent = 'Merci, votre demande a bien été envoyée. Nous vous recontactons sous 24h.';
+          form.reset();
+        }
+      };
+      xhr.send(formData);
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Caplan & Partners</h1>
+    <p>Conseil et Optimisation Énergétique pour les Professionnels</p>
+  </header>
+
+  <section id="bio">
+    <h2>À propos</h2>
+    <p>Fondé par <strong>Gary Caplan</strong>, courtier en énergie et expert en transition énergétique, Caplan & Partners accompagne les professionnels dans la maîtrise et l’optimisation de leurs coûts énergétiques. Grâce à une approche sur mesure, nous vous aidons à comprendre, anticiper et réduire durablement vos dépenses.</p>
+  </section>
+
+  <section id="courtage">
+    <h2>Courtage Énergie pour les Professionnels</h2>
+    <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80" alt="Courtage" />
+    <p>Nous accompagnons exclusivement les professionnels pour l’optimisation de leurs contrats d’électricité et de gaz, identification des meilleures offres et négociation de tarifs sur mesure pour réduire vos coûts énergétiques.</p>
+  </section>
+
+  <section id="solutions">
+    <h2>Solutions Énergétiques</h2>
+    <p>Nos solutions (Pompes à chaleur, Panneaux photovoltaïques, Ballons thermodynamiques, Systèmes solaires combinés, Isolation) s’adressent <strong>aux professionnels comme aux particuliers</strong>. Le courtage énergie reste exclusivement destiné aux professionnels.</p>
+    <div class="grid">
+      <div class="solution"><img src="https://images.unsplash.com/photo-1608500576355-f5f0b7f49da0?auto=format&fit=crop&w=800&q=80" alt="Pompe à chaleur"><h3>Pompe à chaleur</h3><p>Optimisation et installation de systèmes performants et durables.</p></div>
+      <div class="solution"><img src="https://images.unsplash.com/photo-1581091215366-5f2f1b4c1e6e?auto=format&fit=crop&w=800&q=80" alt="Photovoltaïque"><h3>Panneaux photovoltaïques</h3><p>Production d’électricité verte et réduction des coûts énergétiques.</p></div>
+      <div class="solution"><img src="https://images.unsplash.com/photo-1571607389033-53d3826d928c?auto=format&fit=crop&w=800&q=80" alt="Ballon thermodynamique"><h3>Ballon thermodynamique</h3><p>Chauffe-eau économique utilisant l’énergie de l’air.</p></div>
+      <div class="solution"><img src="https://images.unsplash.com/photo-1502911255063-314e206b1ad0?auto=format&fit=crop&w=800&q=80" alt="Système solaire combiné"><h3>Système solaire combiné</h3><p>Chauffage et eau chaude à partir de l’énergie solaire.</p></div>
+      <div class="solution"><img src="https://images.unsplash.com/photo-1581092795368-b11f9f0c5d05?auto=format&fit=crop&w=800&q=80" alt="Isolation"><h3>Isolation</h3><p>Amélioration thermique des bâtiments pour réduire les pertes d’énergie.</p></div>
+    </div>
+  </section>
+
+  <section id="rdv">
+    <h2>Prendre rendez-vous</h2>
+    <form onsubmit="sendForm(event)">
+      <input type="text" name="nom" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre e-mail" required />
+      <input type="text" name="entreprise" placeholder="Nom de votre entreprise (facultatif)" />
+      <input type="tel" name="telephone" placeholder="Votre téléphone" />
+      <select name="typeRdv" required>
+        <option value="">-- Choisir le type de rendez-vous --</option>
+        <option value="Courtage énergie">Courtage énergie (Pro)</option>
+        <option value="Isolation">Isolation (Pro & Particulier)</option>
+        <option value="Pompe à chaleur">Pompe à chaleur (Pro & Particulier)</option>
+        <option value="Photovoltaïque">Photovoltaïque (Pro & Particulier)</option>
+        <option value="Autre projet">Autre projet</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="Message / précisions"></textarea>
+      <button type="submit">Envoyer la demande de rendez-vous</button>
+      <div id="formMessage" class="success-message"></div>
+    </form>
+  </section>
+
+  <section id="actualites">
+    <h2>Actualités & Conseils Énergie</h2>
+    <div class="grid">
+      <div class="news"><img src="https://images.unsplash.com/photo-1581091012184-4e00c8d63b36?auto=format&fit=crop&w=800&q=80" alt="Contrats énergie"><h3>🟢 Pourquoi revoir vos contrats maintenant ?</h3><p>Les prix de l’énergie ont atteint un niveau historiquement bas, proche de ceux de 2019. C’est le moment idéal pour renégocier vos contrats et sécuriser vos tarifs sur le long terme.</p></div>
+      <div class="news"><img src="https://images.unsplash.com/photo-1596495577886-9d6a2fcf2101?auto=format&fit=crop&w=800&q=80" alt="Chauffage intelligent"><h3>⚙️ Optimisez votre chauffage professionnel</h3><p>Changer vos habitudes de régulation et installer un système de suivi intelligent peut réduire jusqu’à 20% vos coûts annuels.</p></div>
+      <div class="news"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Transition énergétique"><h3>🌍 Transition énergétique : un atout business</h3><p>Adopter des solutions durables n’est pas qu’un geste écologique : c’est aussi un levier de rentabilité et d’image pour votre entreprise.</p></div>
+    </div>
+  </section>
+
+  <section id="confiance">
+    <h2>Ils nous font confiance</h2>
+    <div class="grid">
+      <div><p><strong>Restaurant Le Beauce</strong><br>Économie de 41% sur l’électricité et 34% sur le gaz</p></div>
+      <div><p><strong>Opticien Opticlair</strong><br>Économie de 27% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Tasty Food</strong><br>Économie de 37,23% sur l’électricité</p></div>
+      <div><p><strong>Hôtel France Hôtel</strong><br>Économie de 44,97% sur l’électricité et 18% sur le gaz</p></div>
+      <div><p><strong>Hôtel Artresi</strong><br>Économie de 24% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Montdelis</strong><br>Économie de 39% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Frenchie</strong><br>Économie non précisée</p></div>
+      <div><p><strong>Restaurant Neko Ramen</strong><br>Économie de 9% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Mexpar</strong><br>Économie de 36% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Nibelis</strong><br>Économie de 23,72% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Chaumette Villiers</strong><br>Économie totale de 23%</p></div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Caplan & Partners - Tous droits réservés
+  </footer>
+</body>
+</html>
