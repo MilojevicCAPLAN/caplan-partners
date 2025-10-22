@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caplan & Partners | Conseil & Optimisation Énergétique</title>
+  <style>
+    :root{
+      --primary:#1a4f9c;
+      --accent:#163d7a;
+      --bg:#f7f9fb;
+      --card:#fff;
+      --muted:#667085;
+      --radius:10px;
+      --container:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#0f1724;
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      background:linear-gradient(rgba(10,25,41,0.45), rgba(10,25,41,0.15)), url('https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      color:white;
+      padding:60px 20px;
+      text-align:center;
+    }
+    header h1{margin:0;font-size:2.2rem;letter-spacing:0.4px}
+    header p{margin:10px 0 0;color:rgba(235,245,255,0.9)}
+
+    main{max-width:var(--container);margin:36px auto;padding:0 20px}
+
+    .section{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:26px;
+      margin-bottom:24px;
+      box-shadow:0 6px 20px rgba(16,24,40,0.06);
+    }
+    .section h2{color:var(--primary);margin:0 0 8px;font-size:1.3rem}
+    .muted{color:var(--muted);font-size:0.95rem;line-height:1.6}
+
+    /* solutions grid with small images */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{
+      display:flex;gap:14px;align-items:flex-start;background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98));
+      border-radius:10px;padding:14px;border:1px solid rgba(15,23,36,0.04);
+    }
+    .thumb{flex:0 0 96px;height:72px;overflow:hidden;border-radius:8px;background:#eee}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .card h3{margin:0;font-size:1rem;color:#0f1724}
+    .card p{margin:6px 0 0;font-size:0.92rem;color:var(--muted)}
+
+    /* rendez-vous form */
+    form{display:flex;flex-direction:column;gap:10px;max-width:520px}
+    input,textarea,select{padding:10px;border:1px solid #e3e7ee;border-radius:8px;font-size:0.95rem;background:white}
+    button{background:var(--primary);color:white;padding:10px 14px;border:none;border-radius:8px;cursor:pointer}
+    button:hover{background:var(--accent)}
+
+    /* confiance (testimonials) */
+    .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+    .trust-item{background:linear-gradient(180deg,#fff,#fafbfc);padding:12px;border-radius:8px;border:1px solid rgba(15,23,36,0.03)}
+    .trust-item strong{display:block;color:var(--primary);margin-bottom:6px}
+    .trust-item small{color:var(--muted)}
+
+    footer{padding:28px 20px;text-align:center;color:#fff;background:var(--primary);margin-top:28px;border-radius:0 0 var(--radius) var(--radius)}
+    @media (max-width:720px){
+      header{padding:40px 14px}
+      .thumb{flex-basis:84px;height:64px}
+    }
+  </style>
+
+  <script>
+    const formEmail = 'g.caplan@elly-energie.fr';
+    function sendForm(event){
+      event.preventDefault();
+      const form = event.target;
+      const fd = new FormData(form);
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST','https://formsubmit.co/ajax/' + formEmail);
+      xhr.setRequestHeader('Accept','application/json');
+      xhr.onload = () => {
+        if(xhr.status === 200){
+          document.getElementById('formMessage').textContent = 'Merci, votre demande a bien été envoyée — nous vous recontactons sous 24h.';
+          form.reset();
+        } else {
+          document.getElementById('formMessage').textContent = 'Erreur lors de l’envoi, réessayez ou contactez directement g.caplan@elly-energie.fr';
+        }
+      };
+      xhr.onerror = () => { document.getElementById('formMessage').textContent = 'Erreur réseau.'; };
+      xhr.send(fd);
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Caplan &amp; Partners</h1>
+    <p>Conseil & optimisation énergétique — solutions pour professionnels & particuliers</p>
+  </header>
+
+  <main>
+    <!-- A propos -->
+    <section class="section" id="bio">
+      <h2>À propos</h2>
+      <p class="muted">Fondé par <strong>Gary Caplan</strong>, Caplan &amp; Partners accompagne les professionnels et particuliers dans la maîtrise et l’optimisation de leurs coûts énergétiques grâce à des études sur-mesure et des solutions techniques adaptées.</p>
+    </section>
+
+    <!-- Courtage pro -->
+    <section class="section" id="courtage">
+      <h2>Courtage Énergie — Pour les professionnels</h2>
+      <p class="muted">Service exclusivement dédié aux entreprises : recherche, comparaison et négociation des meilleures offres d'électricité & gaz. Dès que vous avez un numéro de SIRET, nous réalisons une étude personnalisée.</p>
+
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <div class="thumb"><img src="https://i.imgur.com/7LAPfyT.png" alt="Courtage pro"></div>
+          <div>
+            <h3>Étude personnalisée</h3>
+            <p>Analyse des contrats, simulations et recommandations pour réduire vos coûts.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=60" alt="Négociation"></div>
+          <div>
+            <h3>Négociation & suivi</h3>
+            <p>Prise en charge de A à Z pour sécuriser vos tarifs sur le long terme.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Énergétiques -->
+    <section class="section" id="solutions">
+      <h2>Solutions Énergétiques</h2>
+      <p class="muted">Pompes à chaleur, panneaux photovoltaïques, ballons thermodynamiques, systèmes solaires, VMC, et isolation — solutions pour optimiser la performance énergétique.</p>
+
+      <div class="grid" style="margin-top:12px">
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/UiYq5je.png" alt="Pompe air eau"></div><div><h3>Pompe à chaleur Air/Eau</h3><p>Solutions performantes pour chauffage collectif ou tertiaire.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/d2iBBR6.png" alt="Pompe air air"></div><div><h3>Pompe à chaleur Air/Air</h3><p>Climatisation réversible et confort thermique.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/nU7jqlM.png" alt="Photovoltaïque"></div><div><h3>Panneaux photovoltaïques</h3><p>Production d'électricité sur site pour réduire la facture.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/CrZiB8m.png" alt="Système solaire combiné"></div><div><h3>Système solaire combiné</h3><p>Chauffage + eau chaude par énergie solaire.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/D5Gz2LD.png" alt="Ballon thermodynamique"></div><div><h3>Ballon thermodynamique</h3><p>Chauffe-eau économe utilisant l'énergie de l'air.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/asd3ZM0.png" alt="VMC"></div><div><h3>VMC Simple/Double Flux</h3><p>Renouvellement d'air performant et économies d'énergie.</p></div></div>
+      </div>
+    </section>
+
+    <!-- Isolation (détaillée) -->
+    <section class="section" id="isolation">
+      <h2>Isolation</h2>
+      <p class="muted">Isolation extérieure, intérieure, combles perdus, sous rampant, plancher bas et vide sanitaire — amélioration durable de la performance thermique.</p>
+
+      <div class="grid" style="margin-top:12px">
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/gkGiBqw.png" alt="Isolation ext"></div><div><h3>Isolation extérieure</h3><p>Réduction des ponts thermiques et confort.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/pGyWZeX.png" alt="Isolation int"></div><div><h3>Isolation intérieure</h3><p>Solution adaptée pour rénovations partielles.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/v3MD49g.png" alt="Combles"></div><div><h3>Combles perdus</h3><p>Gains énergétiques rapides et amortissables.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/Y4Eu49w.png" alt="Sous rampant"></div><div><h3>Sous rampant</h3><p>Optimisation des toitures et confort sous les combles.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/8uGiIGX.png" alt="Plancher bas"></div><div><h3>Plancher bas</h3><p>Isolation du sol pour réduire les déperditions.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/VOyTO30.png" alt="Vide sanitaire"></div><div><h3>Vide sanitaire</h3><p>Traitement pour limiter l'humidité et les pertes.</p></div></div>
+      </div>
+    </section>
+
+    <!-- Rénovation globale (nouvelle section) -->
+    <section class="section" id="renovation-globale">
+      <h2>Projets de rénovation globale</h2>
+      <p class="muted">Les projets de rénovation globale permettent d’améliorer l’efficacité énergétique d’un bâtiment dans son ensemble : isolation, chauffage, ventilation, production d’énergie, régulation et pilotage des consommations.</p>
+
+      <div class="grid" style="margin-top:12px">
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/Ssmii9k.png" alt="Rénovation pro"></div><div><h3>Pour les entreprises</h3><p>Conformément au Décret Tertiaire : réduction progressive des consommations (objectifs : 40% d’ici 2030, 50% d’ici 2040, 60% d’ici 2050). Accompagnement complet : audit, plan d'action, financement et pilotage de chantier.</p></div></div>
+
+        <div class="card"><div class="thumb"><img src="https://i.imgur.com/nU7jqlM.png" alt="Rénovation particulier"></div><div><h3>Pour les particuliers</h3><p>Rénovation des maisons individuelles pour sortir d’une passoire énergétique (DPE F ou G), améliorer la note DPE après travaux, et augmenter la valeur locative/ de vente du bien. Aides possibles : CEE, MaPrimeRénov', etc.</p></div></div>
+      </div>
+
+      <p style="margin-top:12px;font-size:0.95rem;color:var(--muted)">En savoir plus : <a href="https://www.ecologie.gouv.fr" target="_blank" rel="noopener" style="color:var(--primary)">site du Ministère de la Transition écologique</a></p>
+    </section>
+
+    <!-- Prise de RDV -->
+    <section class="section" id="rdv">
+      <h2>Prendre rendez-vous</h2>
+      <p class="muted">Remplissez le formulaire ci-dessous — nous vous recontactons sous 24h.</p>
+
+      <form onsubmit="sendForm(event)" style="margin-top:12px">
+        <input name="nom" type="text" placeholder="Votre nom *" required />
+        <input name="email" type="email" placeholder="Votre e-mail *" required />
+        <input name="entreprise" type="text" placeholder="Nom de l'entreprise (facultatif)" />
+        <input name="telephone" type="tel" placeholder="Votre téléphone" />
+        <select name="typeRdv" required>
+          <option value="">-- Choisir le type de rendez-vous --</option>
+          <option>Courtage énergie (Pro)</option>
+          <option>Isolation</option>
+          <option>Pompe à chaleur</option>
+          <option>Photovoltaïque</option>
+          <option>Autre projet</option>
+        </select>
+        <textarea name="message" rows="4" placeholder="Message / précisions"></textarea>
+        <button type="submit">Envoyer la demande de rendez-vous</button>
+        <div id="formMessage" style="margin-top:8px;color:green;font-weight:600"></div>
+      </form>
+    </section>
+
+    <!-- Témoignages / Économies réalisées -->
+    <section class="section" id="confiance">
+      <h2>Ils nous font confiance — Exemples d'économies réalisées</h2>
+      <p class="muted">Retour chiffré sur quelques clients que nous avons accompagnés en courtage énergie :</p>
+
+      <div class="trust-grid" style="margin-top:12px">
+        <div class="trust-item"><strong>Restaurant Le Beauce</strong><small>Économie de 41% sur l’électricité et 34% sur le gaz</small></div>
+        <div class="trust-item"><strong>Opticien Opticlair</strong><small>Économie de 27% sur l’électricité</small></div>
+        <div class="trust-item"><strong>Restaurant Tasty Food</strong><small>Économie de 37,23% sur l’électricité</small></div>
+        <div class="trust-item"><strong>Hôtel France Hôtel</strong><small>Économie de 44,97% sur l’électricité et 18% sur le gaz</small></div>
+        <div class="trust-item"><strong>Hôtel Artresi</strong><small>Économie de 24% sur l’électricité</small></div>
+        <div class="trust-item"><strong>Restaurant Montdelis</strong><small>Économie de 39% sur l’électricité</small></div>
+        <div class="trust-item"><strong>Restaurant Neko Ramen</strong><small>Économie de 9% sur l’électricité</small></div>
+        <div class="trust-item"><strong>Restaurant Mexpar</strong><small>Économie de 36% sur l’électricité</small></div>
+        <div class="trust-item"><strong>Restaurant Nibelis</strong><small>Économie de 23,72% sur l’électricité</small></div>
+        <div class="trust-item"><strong>Restaurant Chaumette Villiers</strong><small>Économie totale de 23%</small></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Caplan &amp; Partners — Tous droits réservés
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
