@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caplan & Partners | Conseil & Optimisation Énergétique</title>
+  <style>
+    :root{
+      --primary:#1a4f9c;
+      --accent:#163d7a;
+      --bg:#E6F3FF; /* bleu azur */
+      --card:#fff;
+      --muted:#667085;
+      --radius:10px;
+      --container:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#0f1724;
+      -webkit-font-smoothing:antialiased;
+    }
+    header{
+      background:linear-gradient(rgba(10,25,41,0.45), rgba(10,25,41,0.15)), url('https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      color:white;
+      padding:60px 20px;
+      text-align:center;
+    }
+    header h1{margin:0;font-size:2.2rem;letter-spacing:0.4px}
+    header p{margin:10px 0 0;color:rgba(235,245,255,0.9)}
+
+    main{max-width:var(--container);margin:36px auto;padding:0 20px}
+    .section{background:var(--card);border-radius:var(--radius);padding:26px;margin-bottom:24px;box-shadow:0 6px 20px rgba(16,24,40,0.06);}
+    .section h2{color:var(--primary);margin:0 0 8px;font-size:1.3rem}
+    .muted{color:var(--muted);font-size:0.95rem;line-height:1.6}
+
+    /* Accordéon */
+    .accordion-item {border-top:1px solid #e3e7ee;border-radius:10px;margin-bottom:15px;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.05);transition: box-shadow 0.3s ease;}
+    .accordion-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .accordion-header {cursor:pointer;padding:18px 20px;font-weight:600;color:var(--primary);display:flex;justify-content:space-between;align-items:center;border:none;background:#e6edf5;font-size:1.05rem;transition: background 0.3s ease;}
+    .accordion-header:hover { background:#d6e3f0; }
+    .accordion-content {max-height:0;overflow:hidden;padding:0 20px;transition: max-height 0.4s ease, padding 0.3s ease;}
+    .accordion-content p {margin:15px 0; line-height:1.6; color:#333;}
+    .accordion-item.active .accordion-content { max-height:600px; padding:15px 20px; }
+    .accordion-item.active .accordion-header { background:#cddbef; }
+
+    /* Flèche */
+    .accordion-arrow {display:inline-block;transition: transform 0.3s ease;font-size:1.2rem;margin-left:10px;}
+    .accordion-item.active .accordion-arrow { transform:rotate(90deg); }
+
+    /* Formulaire */
+    form{display:flex;flex-direction:column;gap:10px;max-width:520px}
+    input,textarea,select{padding:10px;border:1px solid #e3e7ee;border-radius:8px;font-size:0.95rem;background:white}
+    button{background:var(--primary);color:white;padding:10px 14px;border:none;border-radius:8px;cursor:pointer}
+    button:hover{background:var(--accent)}
+
+    /* Témoignages */
+    .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+    .trust-item{background:linear-gradient(180deg,#fff,#fafbfc);padding:12px;border-radius:8px;border:1px solid rgba(15,23,36,0.03)}
+    .trust-item strong{display:block;color:var(--primary);margin-bottom:6px}
+    .trust-item small{color:var(--muted)}
+
+    footer{padding:28px 20px;text-align:center;color:#fff;background:var(--primary);margin-top:28px;border-radius:0 0 var(--radius) var(--radius)}
+    @media (max-width:720px){
+      header{padding:40px 14px}
+      .thumb{flex-basis:84px;height:64px}
+    }
+  </style>
+
+  <script>
+    const formEmail = 'g.caplan@elly-energie.fr';
+    function sendForm(event){
+      event.preventDefault();
+      const form = event.target;
+      const fd = new FormData(form);
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST','https://formsubmit.co/ajax/' + formEmail);
+      xhr.setRequestHeader('Accept','application/json');
+      xhr.onload = () => {
+        if(xhr.status === 200){
+          document.getElementById('formMessage').textContent = 'Merci, votre demande a bien été envoyée — nous vous recontactons sous 24h.';
+          form.reset();
+        } else {
+          document.getElementById('formMessage').textContent = 'Erreur lors de l’envoi, réessayez ou contactez directement g.caplan@elly-energie.fr';
+        }
+      };
+      xhr.onerror = () => { document.getElementById('formMessage').textContent = 'Erreur réseau.'; };
+      xhr.send(fd);
+    }
+
+    // Accordéon
+    document.addEventListener('DOMContentLoaded', function(){
+      const accordions = document.querySelectorAll('.accordion-item');
+      accordions.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        header.addEventListener('click', () => {
+          const openItem = document.querySelector('.accordion-item.active');
+          if(openItem && openItem !== item){ openItem.classList.remove('active'); }
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Caplan &amp; Partners</h1>
+    <p>Conseil & optimisation énergétique — solutions pour professionnels & particuliers</p>
+  </header>
+
+  <main>
+    <!-- À propos -->
+    <section class="section" id="bio">
+      <h2>À propos</h2>
+      <p class="muted">Fondé par <strong>Gary Caplan</strong>, Caplan &amp; Partners accompagne les professionnels et particuliers dans la maîtrise et l’optimisation de leurs coûts énergétiques grâce à des études sur-mesure et des solutions techniques adaptées.</p>
+    </section>
+
+    <!-- Courtage Énergie -->
+    <section class="section" id="courtage">
+      <h2>Courtage Énergie — Pour les professionnels</h2>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="thumb" style="flex:0 0 80px;height:60px;"><img src="https://i.imgur.com/7LAPfyT.png" alt="Étude personnalisée"></div>
+            🧩 Étude personnalisée
+          </div>
+          <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content">
+          <p><strong>1. Transmission de vos factures</strong><br>Analyse estivale et hivernale, comparaison au tarif actuel.</p>
+          <p><strong>2. Autorisation de collecte (ACD)</strong><br>Collecte des données de consommation pour un diagnostic précis.</p>
+          <p><strong>3. Date d’échéance & pénalités</strong><br>Vérification des pénalités de résiliation, parfois couvertes par les économies du nouveau fournisseur.</p>
+          <p><strong>4. Synthèse de votre profil</strong><br>Rapport clair comparant votre situation actuelle aux futures offres.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="thumb" style="flex:0 0 80px;height:60px;"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=60" alt="Négociation & suivi"></div>
+            ⚙️ Négociation & suivi
+          </div>
+          <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content">
+          <p><strong>1. Lancement de l’appel d’offres</strong><br>Interrogation des fournisseurs selon votre profil et votre scoring.</p>
+          <p><strong>2. Comparaison des offres</strong><br>Visualisation claire des gains par rapport au contrat actuel.</p>
+          <p><strong>3. Note de scoring</strong><br>Plus la note est élevée, plus les participants à l’appel d’offres sont nombreux. Ajustable avec votre bilan ou liasse fiscale.</p>
+          <p><strong>4. Accompagnement complet</strong><br>Choix de la meilleure offre et suivi jusqu’à la mise en place.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Énergétiques -->
+    <section class="section" id="solutions">
+      <h2>Solutions Énergétiques</h2>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="thumb" style="flex:0 0 80px;height:60px;"><img src="https://i.imgur.com/UiYq5je.png" alt="Pompe air eau"></div>
+            Pompe à chaleur Air/Eau
+          </div>
+          <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content"><p>Solutions performantes pour chauffage collectif ou tertiaire.</p></div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="thumb" style="flex:0 0 80px;height:60px;"><img src="https://i.imgur.com/d2iBBR6.png" alt="Pompe air air"></div>
+            Pompe à chaleur Air/Air
+          </div>
+          <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content"><p>Climatisation réversible et confort thermique.</p></div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="thumb" style="flex:0 0 80px;height:60px;"><img src="https://i.imgur.com/nU7jqlM.png" alt="Photovoltaïque"></div>
+            Panneaux photovoltaïques
+          </div>
+          <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content"><p>Production d'électricité sur site pour réduire la facture.</p></div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="thumb" style="flex:0 0 80px;height:60px;"><img src="https://i.imgur.com/CrZiB8m.png" alt="Système solaire"></div>
+            Système solaire combiné
+          </div>
+          <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content"><p>Chauffage + eau chaude par énergie solaire.</p></div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="thumb" style="flex:0 0 80px;height:60px;"><img src="https://i.imgur.com/D5Gz2LD.png" alt="Ballon thermodynamique"></div>
+            Ballon thermodynamique
+          </div>
+          <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content"><p>Chauffe-eau économe utilisant l'énergie de l'air.</p></div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="thumb" style="flex:0 0 80px;height:60px;"><img src="https://i.imgur.com/asd3ZM0.png" alt="VMC"></div>
+            VMC Simple/Double Flux
+          </div>
+          <span class="accordion-arrow">▶</span>
+        </button>
+        <div class="accordion-content"><p>Renouvellement d'air performant et économies d'énergie.</p></div>
+      </div>
+    </section>
