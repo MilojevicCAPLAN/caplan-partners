@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caplan & Partners | Conseil & Optimisation Énergétique</title>
+<style>
+:root{
+  --primary:#1a4f9c;
+  --accent:#163d7a;
+  --bg:#0a3d7a; /* bleu profond */
+  --card:#fff;
+  --muted:#334155;
+  --radius:10px;
+  --container:1100px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:Inter, 'Poppins', sans-serif;
+  background:var(--bg);
+  color:#f0f3f8;
+}
+header{
+  background:linear-gradient(rgba(10,25,41,0.65), rgba(10,25,41,0.35)), url('https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  color:white;
+  padding:60px 20px;
+  text-align:center;
+}
+header h1{margin:0;font-size:2.2rem;}
+header p{margin:10px 0 0;color:rgba(235,245,255,0.9);}
+main{max-width:var(--container);margin:36px auto;padding:0 20px;}
+.section{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:26px;
+  margin-bottom:24px;
+  box-shadow:0 6px 20px rgba(16,24,40,0.1);
+  color:#0f1724;
+}
+.section h2{color:var(--primary);margin:0 0 8px;font-size:1.5rem;}
+.muted{color:var(--muted);font-size:0.95rem;line-height:1.6;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:12px;}
+.card{
+  display:flex;gap:14px;align-items:flex-start;
+  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98));
+  border-radius:10px;padding:14px;border:1px solid rgba(15,23,36,0.06);cursor:pointer;
+  transition:transform 0.2s;
+}
+.card:hover{transform:translateY(-3px);}
+.thumb{flex:0 0 80px;height:80px;overflow:hidden;border-radius:8px;background:#eee;display:flex;align-items:center;justify-content:center;}
+.thumb img{width:100%;height:100%;object-fit:contain;} /* pour logos couleurs correctes */
+.card h3{margin:0;font-size:1rem;color:#0f1724;}
+.card p{margin:6px 0 0;font-size:0.92rem;color:var(--muted);}
+.modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;align-items:center;
+  z-index:999;
+  overflow:auto;
+  padding:20px;
+}
+.modal-content{
+  background:#fff;
+  border-radius:12px;
+  max-width:700px;
+  width:100%;
+  padding:24px;
+  position:relative;
+  animation:fadeIn 0.3s ease-in-out;
+}
+.modal-content img{
+  width:100%;
+  max-height:300px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:16px;
+}
+.modal-content h3{margin-top:0;color:var(--primary);}
+.modal-content p, .modal-content ul{color:#334155;line-height:1.5;margin:6px 0;}
+.close-btn{
+  position:absolute;
+  top:12px;
+  right:12px;
+  font-size:22px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  color:var(--muted);
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(-20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+footer{padding:28px 20px;text-align:center;color:#fff;background:var(--primary);margin-top:28px;border-radius:0 0 var(--radius) var(--radius);}
+.logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:18px;align-items:center;justify-items:center;margin-top:16px;}
+.logo-grid img{max-width:100px;object-fit:contain;}
+.network-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;margin-top:16px;}
+.network-grid div{background:rgba(255,255,255,0.1);padding:12px;border-radius:8px;text-align:center;color:#fff;}
+@media (max-width:720px){
+  header{padding:40px 14px;}
+  .thumb{flex-basis:64px;height:64px;}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Caplan & Partners</h1>
+  <p>Conseil & optimisation énergétique — solutions pour professionnels & particuliers</p>
+</header>
+
+<main>
+<!-- À propos -->
+<section class="section" id="bio">
+  <h2>À propos</h2>
+  <p class="muted">Après des années dans différents domaines de l’énergie pour particuliers et professionnels, techniciens, commerciaux et consultants, nous mettons toutes nos compétences et notre professionnalisme au service de nos clients. Transparence et sincérité sont nos maîtres-mots : nous fournissons tous les outils et informations pour comprendre vos consommations et optimiser vos coûts.</p>
+</section>
+
+<!-- Courtage pro -->
+<section class="section" id="courtage">
+  <h2>Courtage Énergie — Pour les professionnels</h2>
+  <div class="grid">
+    <div class="card" data-title="Étude personnalisée" data-img="https://i.imgur.com/7LAPfyT.png" data-text="<ul><li>Analyse des contrats actuels</li><li>Envoi des factures pour étude</li><li>Recommandations et optimisations</li></ul>">
+      <div class="thumb"><img src="https://i.imgur.com/7LAPfyT.png" alt="Étude personnalisée"></div>
+      <div><h3>Étude personnalisée</h3><p>Analyse des contrats et recommandations.</p></div>
+    </div>
+    <div class="card" data-title="Négociation & suivi" data-img="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=400&q=60" data-text="<ul><li>Déroulé complet de l'appel d'offre</li><li>Analyse des tarifs</li><li>Suivi jusqu'à signature et optimisation</li></ul>">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=400&q=60" alt="Négociation"></div>
+      <div><h3>Négociation & suivi</h3><p>Prise en charge complète pour sécuriser vos tarifs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Solutions Énergétiques -->
+<section class="section" id="solutions">
+  <h2>Solutions Énergétiques</h2>
+  <div class="grid">
+    <div class="card" data-title="Pompe à chaleur Air/Eau" data-img="https://i.imgur.com/UiYq5je.png" data-text="<p>L'air extérieur contient des calories. Le compresseur les transforme pour alimenter vos radiateurs, économique car l'air est gratuit.</p>"></div>
+    <div class="card" data-title="Pompe à chaleur Air/Air" data-img="https://i.imgur.com/d2iBBR6.png" data-text="<p>Système réversible : chauffage en hiver, climatisation en été.</p>"></div>
+    <div class="card" data-title="Panneaux photovoltaïques" data-img="https://i.imgur.com/nU7jqlM.png" data-text="<p>Les photons de lumière sont absorbés pour produire de l’électricité. Même par temps gris, nous produisons de l’énergie.</p>"></div>
+    <div class="card" data-title="Système solaire combiné" data-img="https://i.imgur.com/CrZiB8m.png" data-text="<p>Chauffage + eau chaude sanitaire par énergie solaire.</p>"></div>
+    <div class="card" data-title="Ballon thermodynamique" data-img="https://i.imgur.com/D5Gz2LD.png" data-text="<p>L'air absorbé chauffe l'eau, économique et performant.</p>"></div>
+    <div class="card" data-title="VMC Simple/Double Flux" data-img="https://i.imgur.com/asd3ZM0.png" data-text="<p>Renouvellement d'air performant pour assainir et faire respirer votre habitation ou immeuble.</p>"></div>
+  </div>
+</section>
+
+<!-- Isolation -->
+<section class="section" id="isolation">
+  <h2>Isolation</h2>
+  <div class="grid">
+    <div class="card" data-title="Isolation extérieure" data-img="https://i.imgur.com/gkGiBqw.png" data-text="<p>Le meilleur mode d'isolation, améliore jusqu'à 2 lettres votre DPE.</p>"></div>
+    <div class="card" data-title="Isolation intérieure" data-img="https://i.imgur.com/pGyWZeX.png" data-text="<p>Solution adaptée pour rénovations partielles.</p>"></div>
+    <div class="card" data-title="Combles perdus" data-img="https://i.imgur.com/v3MD49g.png" data-text="<p>Gains énergétiques rapides et amortissables.</p>"></div>
+    <div class="card" data-title="Sous rampant" data-img="https://i.imgur.com/Y4Eu49w.png" data-text="<p>Optimisation des toitures et confort sous les combles.</p>"></div>
+    <div class="card" data-title="Plancher bas" data-img="https://i.imgur.com/8uGiIGX.png" data-text="<p>Isolation du sol pour réduire les déperditions.</p>"></div>
+    <div class="card" data-title="Vide sanitaire" data-img="https://i.imgur.com/VOyTO30.png" data-text="<p>Traitement pour limiter l'humidité et les pertes.</p>"></div>
+  </div>
+</section>
+
+<!-- Rénovation globale -->
+<section class="section" id="renovation-globale">
+  <h2>Projets de rénovation globale</h2>
+  <div class="grid">
+    <div class="card" data-title="Pour les entreprises" data-img="https://i.imgur.com/Ssmii9k.png" data-text="<ul><li>Conformité Décret Tertiaire</li><li>Audit, plan d'action, financement et pilotage de chantier</li></ul>"></div>
+    <div class="card" data-title="Pour les particuliers" data-img="https://i.imgur.com/nU7jqlM.png" data-text="<ul><li>Sortir d’une passoire énergétique</li><li>Améliorer la note DPE après travaux</li><li>Augmenter la valeur locative ou de vente</li></ul>"></div>
+  </div>
+</section>
+
+<!-- Ils nous font confiance -->
+<section class="section" id="confiance">
+  <h2>Ils nous font confiance</h2>
+  <div class="grid">
+    <div><p>Restaurant Le Beauce<br>Économie de 41% sur l’électricité et 34% sur le gaz</p></div>
+    <div><p>Opticien Opticlair<br>Économie de 27% sur l’électricité</p></div>
+    <div><p>Restaurant Tasty Food<br>Économie de 37,23% sur l’électricité</p></div>
+    <div><p>Hôtel France Hôtel<br>Économie de 44,97% sur l’électricité et 18% sur le gaz</p></div>
+    <div><p>Hôtel Artresi<br>Économie de 24% sur l’électricité</p></div>
+    <div><p>Restaurant Montdelis<br>Économie de 39% sur l’électricité</p></div>
+    <div><p>Restaurant Frenchie<br>Économie non précisée</p></div>
+    <div><p>Restaurant Neko Ramen<br>Économie de 9% sur l’électricité</p></div>
+    <div><p>Restaurant Mexpar<br>Économie de 36% sur l’électricité</p></div>
+    <div><p>Restaurant Nibelis<br>Économie de 23,72% sur l’électricité</p></div>
+    <div><p>Restaurant Chaumette Villiers<br>Économie totale de 23%</p></div>
+  </div>
+</section>
+
+<!-- Questionnaire / prise de rdv -->
+<section class="section" id="rdv">
+  <h2>Questionnaire rapide & prise de rendez-vous</h2>
+  <p class="muted">Obtenez votre étude gratuitement ou votre devis en quelques minutes.</p>
+  <a href="#" style="display:inline-block;margin-top:12px;padding:12px 20px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;">Lancer le questionnaire</a>
+</section>
+
+<!-- Fournisseurs participants -->
+<section class="section" id="fournisseurs">
+  <h2>Fournisseurs participants à nos appels d’offres</h2>
+  <div class="logo-grid">
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/10/logo-lucia-energie.svg" alt="Lucia Energie">
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/logo-dyneff-1.svg" alt="Dyneff"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/07/ilek.svg" alt="Ilek"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/gaz-europeen-2.svg" alt="Gaz européen"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2022/03/endesa-logo.svg" alt="Endesa"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/primeo-energie-logo.svg" alt="Prime"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/sefe-energy-logo.svg" alt="Sefe"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/vattenfall-logo.svg" alt="Vattenfall"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2021/02/eni-logo.svg" alt="Eni"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2023/02/totalenergies-logo.svg" alt="Total"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/enovos-logo.svg" alt="Enovos"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2021/09/picoty-logo.svg" alt="Picoty"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/engie-logo.svg" alt="Engie"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2022/04/ekwateur-logo.svg" alt="Ekwateur"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2020/05/gazelenergie-logo.svg" alt="Gazel"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/10/logo-color.svg" alt="Save Energie"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/met.svg" alt="Met">
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2025/10/elmy.svg" alt="Elmy"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/ohm-132x74.png" alt="Ohm"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2025/03/logo-geg-132x72.png" alt="Geg"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2025/07/proxelia-132x34.png" alt="Proxelia"> 
+    <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/09/logo-hellio.svg" alt="Helio"> 
+  </div> 
+</section> 
+
+<!-- Réseau de confiance --> 
+<section class="section" id="reseau"> 
+  <h2>Notre réseau de confiance</h2> 
+  <div class="network-grid"> 
+    <div><p>Partenaire 1</p></div> 
+    <div><p>Partenaire 2</p></div> 
+    <div><p>Partenaire 3</p></div> 
+    <div><p>Partenaire 4</p></div>
+  </div> 
+</section> 
+</main>
+
+<footer>&copy; 2025 Caplan & Partners - Tous droits réservés</footer>
+
+<!-- Modal JS --> 
+<script>
+const cards = document.querySelectorAll('.card');
+const modal = document.createElement('div');
+modal.classList.add('modal');
+modal.innerHTML = `
+  <div class="modal-content">
+    <button class="close-btn">&times;</button>
+    <h3></h3>
+    <img src="" alt="">
+    <p></p>
+  </div>`;
+document.body.appendChild(modal);
+
+const modalContent = modal.querySelector('.modal-content');
+const modalImg = modalContent.querySelector('img');
+const modalTitle = modalContent.querySelector('h3');
+const modalText = modalContent.querySelector('p');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modalTitle.innerHTML = card.dataset.title;
+    modalImg.src = card.dataset.img;
+    modalText.innerHTML = card.dataset.text;
+  });
+});
+
+modal.querySelector('.close-btn').addEventListener('click', () => modal.style.display = 'none');
+modal.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
+</script>
+
+</body>
+</html>
