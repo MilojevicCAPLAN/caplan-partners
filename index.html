@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Caplan & Partners | Conseil & Optimisation Énergétique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-deep:#0A3D62;
+  --primary:#1A4F9C;
+  --accent:#1E90FF;
+  --card:#ffffff;
+  --muted:#556070;
+  --radius:12px;
+  --container:1200px;
+  --glass: rgba(255,255,255,0.85);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:var(--bg-deep);
+  color:#0f1724;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+.container{max-width:var(--container);margin:0 auto;padding:24px;}
+.header-hero{
+  background:linear-gradient(rgba(6,18,38,0.55), rgba(6,18,38,0.25)), url('https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  color:white;padding:56px 24px;border-radius:0 0 18px 18px;margin-bottom:24px;
+  text-align:center;
+}
+.header-hero h1{font-size:2.4rem;margin:0 0 10px}
+.header-hero p{margin:0;color:rgba(255,255,255,0.9);max-width:900px;margin-left:auto;margin-right:auto}
+
+/* Section card wrapper */
+.section{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:22px;
+  margin:18px 0;
+  box-shadow:0 8px 30px rgba(10,20,30,0.12);
+  color:#0f1724;
+  transform:translateZ(0);
+  overflow:hidden;
+}
+.section h2{color:var(--primary);margin:0 0 8px;font-size:1.4rem}
+.section p.muted{color:var(--muted);margin:0 0 12px}
+
+/* responsive grid */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));align-items:start}
+.card{
+  background:linear-gradient(180deg,#fff,#fbfdff);
+  border-radius:10px;padding:12px;border:1px solid rgba(15,23,36,0.06);
+  cursor:pointer;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;height:100%;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 34px rgba(10,20,30,0.12)}
+.card .thumb{width:100%;height:140px;overflow:hidden;border-radius:8px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;background:#eee}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card h3{margin:0 0 8px;font-size:1.05rem;color:#0f1724}
+.card p{margin:0;color:var(--muted);font-size:0.95rem}
+
+/* small helpers */
+.kv{font-weight:600;color:var(--primary)}
+.cta{display:inline-block;padding:11px 18px;background:var(--accent);color:white;border-radius:8px;text-decoration:none}
+
+/* logos area - white background for legibility */
+.logos-wrap{background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.logo-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));align-items:center;justify-items:center}
+.logo-grid img{max-width:120px;height:auto;display:block}
+
+/* clients grid */
+.clients-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+/* contact form modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(4,6,15,0.6);z-index:9999;padding:20px}
+.modal .modal-panel{background:#fff;border-radius:12px;padding:20px;max-width:720px;width:100%;box-shadow:0 18px 40px rgba(0,0,0,0.25)}
+.modal .modal-panel h3{margin-top:0;color:var(--primary)}
+.form-row{display:flex;gap:10px}
+.input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;font-size:0.95rem}
+textarea{min-height:110px;resize:vertical}
+
+/* modal image/text */
+.modal-content-img{width:100%;height:240px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+
+/* footer */
+.footer{margin-top:24px;padding:18px;background:var(--primary);color:#fff;border-radius:10px;font-size:0.95rem;text-align:center}
+
+/* small screens */
+@media(max-width:720px){
+  .header-hero h1{font-size:1.6rem}
+  .card .thumb{height:120px}
+  .form-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+  <header class="header-hero">
+    <div class="container">
+      <h1>Caplan & Partners</h1>
+      <p>Conseil & optimisation énergétique — pour les professionnels et les particuliers. Transparence, expertise et optimisation des coûts : on vous donne tous les outils pour comprendre et agir.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- À propos -->
+    <section class="section" id="about">
+      <h2>À propos</h2>
+      <p class="muted">Après des années d'expérience technique et commerciale dans le secteur de l'énergie, nous accompagnons entreprises et particuliers sur les enjeux de performance, maîtrise des factures et rénovation énergétique. Notre méthode : transparence, diagnostic précis et recommandations actionnables.</p>
+    </section>
+
+    <!-- Courtage -->
+    <section class="section" id="courtage">
+      <h2>Courtage Énergie — Pour les professionnels</h2>
+      <p class="muted">Nous réalisons des appels d'offres multi-fournisseurs et négocions en votre nom pour sécuriser les meilleurs tarifs.</p>
+
+      <div class="grid">
+        <div class="card" data-title="Étude personnalisée" data-img="https://i.imgur.com/7LAPfyT.png" data-text="<ul><li>Envoi de vos factures pour analyse</li><li>Vérification des contrats et pénalités</li><li>Recommandations concrètes</li></ul>">
+          <div class="thumb"><img src="https://i.imgur.com/7LAPfyT.png" alt="Etude personnalisée"></div>
+          <h3>Étude personnalisée</h3>
+          <p class="muted">Analyse de vos contrats et recommandations adaptées à votre structure.</p>
+        </div>
+
+        <div class="card" data-title="Négociation & suivi" data-img="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=800&q=60" data-text="<ul><li>Appel d'offres sécurisé</li><li>Analyse et sélection des offres</li><li>Suivi jusqu'à la signature</li></ul>">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=800&q=60" alt="Negociation"></div>
+          <h3>Négociation & suivi</h3>
+          <p class="muted">Nous pilotons l'ensemble du process pour sécuriser vos économies.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Energetiques -->
+    <section class="section" id="solutions">
+      <h2>Solutions énergétiques</h2>
+      <p class="muted">Tous les systèmes pour réduire vos consommations et produire de l'énergie sur site.</p>
+
+      <div class="grid">
+        <div class="card" data-title="Pompe à chaleur Air/Eau" data-img="https://i.imgur.com/UiYq5je.png" data-text="<p>La pompe à chaleur absorbe les calories présentes dans l'air extérieur. Le compresseur élève la température puis alimente vos radiateurs : solution économique (l'air est gratuit) et performante.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/UiYq5je.png" alt="PAC Air/Eau"></div>
+          <h3>Pompe à chaleur Air/Eau</h3>
+          <p class="muted">Efficace pour chauffage collectif et ECS.</p>
+        </div>
+
+        <div class="card" data-title="Pompe à chaleur Air/Air" data-img="https://i.imgur.com/d2iBBR6.png" data-text="<p>Cette PAC est réversible : elle chauffe en hiver et rafraîchit en été, idéale pour le confort instantané et la climatisation légère.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/d2iBBR6.png" alt="PAC Air/Air"></div>
+          <h3>Pompe à chaleur Air/Air</h3>
+          <p class="muted">Système réversible pour chauffage & climatisation.</p>
+        </div>
+
+        <div class="card" data-title="Panneaux photovoltaïques" data-img="https://i.imgur.com/nU7jqlM.png" data-text="<p>Les photons de lumière sont convertis en électricité. Même par temps gris, les panneaux produisent de l'énergie (moins, mais produisent).</p>">
+          <div class="thumb"><img src="https://i.imgur.com/nU7jqlM.png" alt="PV"></div>
+          <h3>Panneaux photovoltaïques</h3>
+          <p class="muted">Production locale et réduction de facture.</p>
+        </div>
+
+        <div class="card" data-title="Système solaire combiné" data-img="https://i.imgur.com/CrZiB8m.png" data-text="<p>Permet de produire chaleur et eau chaude sanitaire grâce à l'énergie solaire en complément du chauffage principal.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/CrZiB8m.png" alt="Système solaire combiné"></div>
+          <h3>Système solaire combiné</h3>
+          <p class="muted">Idéal pour ECS et soutien chauffage.</p>
+        </div>
+
+        <div class="card" data-title="Ballon thermodynamique" data-img="https://i.imgur.com/D5Gz2LD.png" data-text="<p>Le ballon récupère les calories de l'air pour chauffer l'eau sanitaire : consommation électrique réduite par rapport à un chauffe-eau classique.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/D5Gz2LD.png" alt="Ballon thermodynamique"></div>
+          <h3>Ballon thermodynamique</h3>
+          <p class="muted">Solution économique pour eau chaude sanitaire.</p>
+        </div>
+
+        <div class="card" data-title="VMC Simple/Double Flux" data-img="https://i.imgur.com/asd3ZM0.png" data-text="<p>La VMC renouvelle et assainit l'air intérieur. La double flux permet de récupérer la chaleur de l'air extrait pour préchauffer l'air entrant, réduisant les pertes.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/asd3ZM0.png" alt="VMC"></div>
+          <h3>VMC Simple / Double Flux</h3>
+          <p class="muted">Qualité de l'air et économies d'énergie.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Isolation -->
+    <section class="section" id="isolation">
+      <h2>Isolation</h2>
+      <p class="muted">Toutes les solutions pour limiter les déperditions et améliorer le DPE.</p>
+
+      <div class="grid">
+        <div class="card" data-title="Isolation extérieure" data-img="https://i.imgur.com/gkGiBqw.png" data-text="<p>L'isolation extérieure réduit les ponts thermiques et peut faire gagner jusqu'à 2 lettres sur le DPE.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/gkGiBqw.png" alt="Isolation extérieure"></div>
+          <h3>Isolation extérieure</h3>
+          <p class="muted">Solution performante pour façade et confort.</p>
+        </div>
+
+        <div class="card" data-title="Isolation intérieure" data-img="https://i.imgur.com/pGyWZeX.png" data-text="<p>Adaptée aux rénovations partielles, améliore confort et consommation.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/pGyWZeX.png" alt="Isolation intérieure"></div>
+          <h3>Isolation intérieure</h3>
+          <p class="muted">Efficace pour rénovations ciblées.</p>
+        </div>
+
+        <div class="card" data-title="Combles perdus" data-img="https://i.imgur.com/v3MD49g.png" data-text="<p>Isolation des combles pour éviter la déperdition de chaleur par le toit — retour sur investissement rapide.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/v3MD49g.png" alt="Combles perdus"></div>
+          <h3>Combles perdus</h3>
+          <p class="muted">Gain thermique immédiat.</p>
+        </div>
+
+        <div class="card" data-title="Sous rampant" data-img="https://i.imgur.com/Y4Eu49w.png" data-text="<p>Isolation sous toiture et optimisation du confort sous pente.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/Y4Eu49w.png" alt="Sous rampant"></div>
+          <h3>Sous rampant</h3>
+          <p class="muted">Confort et étanchéité.</p>
+        </div>
+
+        <div class="card" data-title="Plancher bas" data-img="https://i.imgur.com/8uGiIGX.png" data-text="<p>Isolation du sol pour limiter les pertes et améliorer la sensation thermique.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/8uGiIGX.png" alt="Plancher bas"></div>
+          <h3>Plancher bas</h3>
+          <p class="muted">Meilleure conservation de la chaleur.</p>
+        </div>
+
+        <div class="card" data-title="Vide sanitaire" data-img="https://i.imgur.com/VOyTO30.png" data-text="<p>Traitement du vide sanitaire pour limiter humidité et pertes énergétiques.</p>">
+          <div class="thumb"><img src="https://i.imgur.com/VOyTO30.png" alt="Vide sanitaire"></div>
+          <h3>Vide sanitaire</h3>
+          <p class="muted">Prévention humidité & pertes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rénovation globale -->
+    <section class="section" id="renovation">
+      <h2>Projets de rénovation globale</h2>
+      <p class="muted">Accompagnement complet : audit, plan de travaux, financement, pilotage et suivi chantier — pour particuliers et entreprises.</p>
+
+      <div class="grid">
+        <div class="card" data-title="Pour les entreprises" data-img="https://i.imgur.com/Ssmii9k.png" data-text="<ul><li>Conformité Décret Tertiaire</li><li>Audit & plan d'action</li><li>Pilotage et optimisation</li></ul>">
+          <div class="thumb"><img src="https://i.imgur.com/Ssmii9k.png" alt="Rénovation entreprises"></div>
+          <h3>Pour les entreprises</h3>
+          <p class="muted">Solutions sur mesure pour le tertiaire.</p>
+        </div>
+
+        <div class="card" data-title="Pour les particuliers" data-img="https://i.imgur.com/nU7jqlM.png" data-text="<ul><li>Sortir d'une passoire énergétique</li><li>Améliorer votre DPE</li><li>Aides : CEE, MaPrimeRénov'</li></ul>">
+          <div class="thumb"><img src="https://i.imgur.com/nU7jqlM.png" alt="Rénovation particuliers"></div>
+          <h3>Pour les particuliers</h3>
+          <p class="muted">Gains énergétiques et valorisation du bien.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ils nous font confiance -->
+    <section class="section" id="clients">
+      <h2>Ils nous font confiance</h2>
+      <p class="muted">Résultats obtenus chez nos clients</p>
+
+      <div class="clients-grid">
+        <div class="card" style="padding:12px">
+          <h3>Restaurant Le Beauce</h3>
+          <p class="muted">Économie de 41% sur l’électricité et 34% sur le gaz</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h3>Opticien Opticlair</h3>
+          <p class="muted">Économie de 27% sur l’électricité</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h3>Restaurant Tasty Food</h3>
+          <p class="muted">Économie de 37,23% sur l’électricité</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h3>Hôtel France Hôtel</h3>
+          <p class="muted">Économie de 44,97% sur l’électricité et 18% sur le gaz</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h3>Hôtel Artresi</h3>
+          <p class="muted">Économie de 24% sur l’électricité</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h3>Restaurant Montdelis</h3>
+          <p class="muted">Économie de 39% sur l’électricité</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h3>Restaurant Frenchie</h3>
+          <p class="muted">Économie non précisée</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h3>Restaurant Neko Ramen</h3>
+          <p class="muted">Économie de 9% sur l’électricité</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h3>Restaurant Mexpar</h3>
+          <p class="muted">Économie de 36% sur l’électricité</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h3>Restaurant Nibelis</h3>
+          <p class="muted">Économie de 23,72% sur l’électricité</p>
+        </div>
+        <div class="card" style="padding:12px">
+          <h3>Restaurant Chaumette Villiers</h3>
+          <p class="muted">Économie totale de 23%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Questionnaire rapide & prise de rdv -->
+    <section class="section" id="rdv">
+      <h2>Questionnaire rapide & prise de rendez-vous</h2>
+      <p class="muted">Obtenez votre étude gratuitement ou un devis personnalisé. Remplissez le formulaire — nous vous recontactons rapidement.</p>
+      <p><a class="cta" id="openFormBtn" href="#contact">Remplir le questionnaire</a></p>
+    </section>
+
+    <!-- Fournisseurs participants -->
+    <section class="section" id="fournisseurs">
+      <h2>Fournisseurs participants à nos appels d’offres</h2>
+      <p class="muted">Les fournisseurs qui répondent à nos appels d'offres (logos à titre d'information uniquement).</p>
+
+      <div class="logos-wrap">
+        <div class="logo-grid">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/10/logo-lucia-energie.svg" alt="Lucia Energie">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/logo-dyneff-1.svg" alt="Dyneff">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/07/ilek.svg" alt="Ilek">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/gaz-europeen-2.svg" alt="Gaz européen">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2022/03/endesa-logo.svg" alt="Endesa">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/primeo-energie-logo.svg" alt="Primeo">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/sefe-energy-logo.svg" alt="Sefe">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/vattenfall-logo.svg" alt="Vattenfall">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2021/02/eni-logo.svg" alt="Eni">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2023/02/totalenergies-logo.svg" alt="TotalEnergies">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/enovos-logo.svg" alt="Enovos">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2021/09/picoty-logo.svg" alt="Picoty">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/engie-logo.svg" alt="Engie">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2022/04/ekwateur-logo.svg" alt="Ekwateur">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2020/05/gazelenergie-logo.svg" alt="Gazel">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/10/logo-color.svg" alt="Save Energie">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/met.svg" alt="Met">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2025/10/elmy.svg" alt="Elmy">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/ohm-132x74.png" alt="Ohm">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2025/03/logo-geg-132x72.png" alt="GEG">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2025/07/proxelia-132x34.png" alt="Proxelia">
+          <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/09/logo-hellio.svg" alt="Hellio">
+        </div>
+      </div>
+    </section>
+
+    <!-- Notre réseau de confiance -->
+    <section class="section" id="reseau">
+      <h2>Notre réseau de confiance</h2>
+      <div class="network-grid">
+        <div>AXE Écologie</div>
+        <div>Tuco Énergie</div>
+        <div>Groupe Isoltoit</div>
+        <div>Installateurs & bureaux d'études partenaires</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    © 2025 Caplan & Partners — Tous droits réservés
+  </footer>
+
+  <!-- Modal for cards -->
+  <div id="cardModal" class="modal" aria-hidden="true">
+    <div class="modal-panel modal-content">
+      <button class="close-btn" id="closeCardModal" aria-label="Fermer">✕</button>
+      <img id="modalImg" class="modal-content-img" src="" alt="">
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Contact / RDV Modal -->
+  <div id="contactModal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="close-btn" id="closeContact" aria-label="Fermer">✕</button>
+      <h3>Demande d'étude / prise de rendez-vous</h3>
+      <p class="muted">Remplissez ce formulaire et nous vous recontactons sous 48h.</p>
+      <form id="leadForm">
+        <div class="form-row" style="margin-bottom:10px;">
+          <input class="input" name="company" placeholder="Nom de la société (ou votre nom)" required>
+        </div>
+        <div class="form-row" style="margin-bottom:10px;">
+          <input class="input" name="email" type="email" placeholder="Email" required>
+          <input class="input" name="phone" placeholder="Téléphone" required>
+        </div>
+        <div style="margin-bottom:10px;">
+          <select name="type" class="input" required>
+            <option value="">Type de demande</option>
+            <option value="courtage">Courtage / Offre fournisseur</option>
+            <option value="renovation">Rénovation énergétique</option>
+            <option value="isolation">Isolation</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div style="margin-bottom:12px;">
+          <textarea name="message" placeholder="Bref descriptif / adresses / PDL si connu"></textarea>
+        </div>
+        <div style="text-align:right">
+          <button type="submit" class="cta">Envoyer la demande</button>
+        </div>
+        <p id="formNotice" class="muted" style="margin-top:10px;display:none">Merci — nous avons reçu votre demande.</p>
+      </form>
+    </div>
+  </div>
+
+<script>
+// --- Modal for cards ---
+const cardEls = document.querySelectorAll('.card');
+const cardModal = document.getElementById('cardModal');
+const modalImg = document.getElementById('modalImg');
+const modalTitle = document.getElementById('modalTitle');
+const modalBody = document.getElementById('modalBody');
+const closeCardModal = document.getElementById('closeCardModal');
+
+cardEls.forEach(card => {
+  card.addEventListener('click', () => {
+    const title = card.getAttribute('data-title') || card.querySelector('h3')?.innerText;
+    const img = card.getAttribute('data-img') || card.querySelector('img')?.src;
+    const text = card.getAttribute('data-text') || '';
+    modalTitle.innerHTML = title || '';
+    modalImg.src = img || '';
+    modalBody.innerHTML = text || '';
+    cardModal.style.display = 'flex';
+    cardModal.setAttribute('aria-hidden','false');
+  });
+});
+
+closeCardModal.addEventListener('click', ()=> {
+  cardModal.style.display = 'none';
+  cardModal.setAttribute('aria-hidden','true');
+});
+cardModal.addEventListener('click', e => { if(e.target === cardModal){ cardModal.style.display='none'; cardModal.setAttribute('aria-hidden','true'); }});
+
+// --- Contact / RDV modal ---
+const contactModal = document.getElementById('contactModal');
+const openFormBtn = document.getElementById('openFormBtn');
+const closeContact = document.getElementById('closeContact');
+
+openFormBtn.addEventListener('click', (e)=>{
+  e.preventDefault();
+  contactModal.style.display = 'flex';
+  contactModal.setAttribute('aria-hidden','false');
+});
+closeContact.addEventListener('click', ()=>{
+  contactModal.style.display = 'none';
+  contactModal.setAttribute('aria-hidden','true');
+});
+contactModal.addEventListener('click', e => { if(e.target===contactModal) { contactModal.style.display='none'; contactModal.setAttribute('aria-hidden','true'); }});
+
+// --- Simple form handling (client side) ---
+const leadForm = document.getElementById('leadForm');
+leadForm.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  // Here you should send data to your backend or an email endpoint.
+  // For now we show a confirmation message.
+  document.getElementById('formNotice').style.display='block';
+  leadForm.reset();
+  setTimeout(()=>{ contactModal.style.display='none'; document.getElementById('formNotice').style.display='none'; }, 1800);
+});
+
+// --- Accessibility: close modals on Escape ---
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape'){
+    if(cardModal.style.display === 'flex'){ cardModal.style.display='none'; cardModal.setAttribute('aria-hidden','true'); }
+    if(contactModal.style.display === 'flex'){ contactModal.style.display='none'; contactModal.setAttribute('aria-hidden','true'); }
+  }
+});
+</script>
+</body>
+</html>
