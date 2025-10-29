@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caplan & Partners | Conseil & Optimisation Énergétique</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #0A3D62;
+      color: #222;
+    }
+    header {
+      background: white;
+      color: #0A3D62;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    header p {
+      font-size: 1.1em;
+      margin-top: 10px;
+      color: #444;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    section:nth-child(even) {
+      background: #EAF2FB;
+    }
+    h2 {
+      color: #0A3D62;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 15px;
+      color: #0A3D62;
+    }
+    .card p {
+      margin: 0 15px 15px;
+      color: #555;
+      font-size: 0.95em;
+    }
+    button {
+      background: #1E90FF;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #187bcd;
+    }
+    footer {
+      background: #0A3D62;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    /* Logos fournisseurs */
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      align-items: center;
+      justify-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .logos img {
+      width: 120px;
+      height: auto;
+      filter: brightness(0) invert(0);
+      transition: transform 0.3s ease;
+    }
+    .logos img:hover {
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Caplan & Partners</h1>
+    <p>Après des années d’expérience dans les domaines de l’énergie, nous avons réuni nos compétences, notre professionnalisme et nos valeurs de transparence afin de vous offrir tous les outils et informations nécessaires pour comprendre, comparer et optimiser vos consommations.</p>
+  </header>
+
+  <section id="services">
+    <h2>Nos domaines d’expertise</h2>
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://i.imgur.com/7LAPfyT.png" alt="Courtiers pour pros">
+        <h3>Courtage énergie</h3>
+        <p>Optimisez vos contrats d’électricité et de gaz grâce à nos appels d’offres multi-fournisseurs.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/UiYq5je.png" alt="Pompe à chaleur air/eau">
+        <h3>Pompe à chaleur air/eau</h3>
+        <p>Utilise l’air extérieur pour produire de la chaleur via un compresseur, alimentant vos radiateurs — une solution économique et écologique.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/d2iBBR6.png" alt="Pompe à chaleur air/air">
+        <h3>Pompe à chaleur air/air</h3>
+        <p>Capte les calories de l’air extérieur pour chauffer ou rafraîchir votre intérieur — un système réversible et performant.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/nU7jqlM.png" alt="Panneaux photovoltaïques">
+        <h3>Panneaux photovoltaïques</h3>
+        <p>Les photons de lumière produisent de l’électricité, même par temps gris — une autonomie durable.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/CrZiB8m.png" alt="Système solaire combiné">
+        <h3>Système solaire combiné</h3>
+        <p>Combine production d’eau chaude sanitaire et chauffage grâce à l’énergie solaire.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/D5Gz2LD.png" alt="Ballon thermodynamique">
+        <h3>Ballon thermodynamique</h3>
+        <p>Récupère les calories de l’air ambiant pour chauffer l’eau efficacement et économiquement.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/asd3ZM0.png" alt="VMC">
+        <h3>VMC simple et double flux</h3>
+        <p>Assure le renouvellement et la qualité de l’air intérieur tout en limitant les pertes de chaleur.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/gkGiBqw.png" alt="Isolation extérieure">
+        <h3>Isolation extérieure</h3>
+        <p>La solution la plus efficace pour améliorer votre DPE, pouvant gagner jusqu’à deux lettres.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/pGyWZeX.png" alt="Isolation intérieure">
+        <h3>Isolation intérieure</h3>
+        <p>Améliore le confort thermique et réduit significativement vos besoins en chauffage.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/v3MD49g.png" alt="Combles perdus">
+        <h3>Combles perdus</h3>
+        <p>Préserve la chaleur montante en isolant les combles — un gain immédiat sur vos factures.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/Y4Eu49w.png" alt="Sous rampant">
+        <h3>Sous rampant</h3>
+        <p>Optimise l’isolation sous toiture pour conserver la chaleur en hiver et la fraîcheur en été.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/8uGiIGX.png" alt="Plancher bas">
+        <h3>Plancher bas</h3>
+        <p>Évite la déperdition thermique du sol pour un confort optimal.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/VOyTO30.png" alt="Vide sanitaire">
+        <h3>Vide sanitaire</h3>
+        <p>Permet de limiter les remontées de froid et d’humidité venant du sol.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="etude">
+    <h2>Obtenez votre étude gratuite</h2>
+    <p>Remplissez notre formulaire pour recevoir une analyse personnalisée de vos consommations et économies potentielles.</p>
+    <button>Demander mon étude gratuite</button>
+  </section>
+
+  <section id="confiance">
+    <h2>Ils nous font confiance</h2>
+    <div class="grid">
+      <div><p><strong>Restaurant Le Beauce</strong><br>Économie de 41% sur l’électricité et 34% sur le gaz</p></div>
+      <div><p><strong>Opticien Opticlair</strong><br>Économie de 27% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Tasty Food</strong><br>Économie de 37,23% sur l’électricité</p></div>
+      <div><p><strong>Hôtel France Hôtel</strong><br>Économie de 44,97% sur l’électricité et 18% sur le gaz</p></div>
+      <div><p><strong>Hôtel Artresi</strong><br>Économie de 24% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Montdelis</strong><br>Économie de 39% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Frenchie</strong><br>Économie non précisée</p></div>
+      <div><p><strong>Restaurant Neko Ramen</strong><br>Économie de 9% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Mexpar</strong><br>Économie de 36% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Nibelis</strong><br>Économie de 23,72% sur l’électricité</p></div>
+      <div><p><strong>Restaurant Chaumette Villiers</strong><br>Économie totale de 23%</p></div>
+    </div>
+  </section>
+
+  <section id="fournisseurs">
+    <h2>Fournisseurs participants à nos appels d’offres</h2>
+    <div class="logos">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/10/logo-lucia-energie.svg" alt="Lucia Énergie">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/logo-dyneff-1.svg" alt="Dyneff">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/07/ilek.svg" alt="Ilek">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/gaz-europeen-2.svg" alt="Gaz Européen">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2022/03/endesa-logo.svg" alt="Endesa">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/primeo-energie-logo.svg" alt="Primeo">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/sefe-energy-logo.svg" alt="Sefe">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/vattenfall-logo.svg" alt="Vattenfall">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2021/02/eni-logo.svg" alt="Eni">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2023/02/totalenergies-logo.svg" alt="Total Énergies">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/enovos-logo.svg" alt="Enovos">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2021/09/picoty-logo.svg" alt="Picoty">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2019/11/engie-logo.svg" alt="Engie">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2022/04/ekwateur-logo.svg" alt="Ekwateur">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2020/05/gazelenergie-logo.svg" alt="Gazel">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/10/logo-color.svg" alt="Save Énergie">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/met.svg" alt="MET">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2025/10/elmy.svg" alt="Elmy">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/01/ohm-132x74.png" alt="Ohm Énergie">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2025/03/logo-geg-132x72.png" alt="GEG">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2025/07/proxelia-132x34.png" alt="Proxelia">
+      <img src="https://alliancedesenergies.fr/wp-content/uploads/2024/09/logo-hellio.svg" alt="Hellio">
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Caplan & Partners - Tous droits réservés
+  </footer>
+
+</body>
+</html>
+
